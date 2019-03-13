@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+      <script src="js/jquery.min.js"></script>
+      <script type = "text/javascript">
+      $(document).ready(function () {
+          document.getElementById("item").focus();
+          $("#btn").click(function () {
+              var itemName = document.getElementById("item").value;
+              if (itemName == "") {
+                  document.getElementById("feedback").innerHTML = "Nothing entered";
+              }
+              else {
+                  $("ol").append("<li>" + itemName + "</li>");
+                  document.getElementById("feedback").innerHTML = "";
+                  document.getElementById('item').value = '';
+              }
+              document.getElementById("item").focus();
+          });
+      });
+      </script>
+   </head>
+   <body style="margin-left: 30vw;">
+      <div id="fbody">
+         <img src="image/cart.png" alt="Cart Image">
+         <h1>BUY GROCERIES</h1>
+         <h5>What do you need to buy today?</h5>
+         <div>
+            <input id="item" name="item" class="item" placeholder="Your item here..." title="Item" type="text" />
+         </div>
+         <div>
+            <button id="btn">Add to list</button>
+         </div>
+         <ol>
+            <li>Mango</li>
+            <li>Apple</li>
+         </ol>
+         <p id="feedback"></p>
+         <hr>
+         <footer class="row">
+            <a href="#" class="column">
+            <img src="image/g.png" alt="G+" class="logo">
+            </a>
+            <a href="#" class="column">
+            <img src="image/t.png" alt="T" class="logo">
+            </a>
+            <a href="#" class="column">
+            <img src="image/f.png" alt="F" class="logo">
+            </a>
+         </footer>
+      </div>
+   </body>
+</html>
